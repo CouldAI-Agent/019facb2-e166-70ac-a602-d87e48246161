@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:uuid/uuid.dart';
+
 import '../models/modul_ajar.dart';
 
 class FormScreen extends StatefulWidget {
@@ -45,7 +45,7 @@ class _FormScreenState extends State<FormScreen> {
   void _simpanModul() {
     if (_formKey.currentState!.validate()) {
       final modul = ModulAjar(
-        id: const Uuid().v4(),
+        id: DateTime.now().millisecondsSinceEpoch.toString(),
         judul: _judulController.text,
         mataPelajaran: _mapelController.text,
         fase: _faseController.text,
